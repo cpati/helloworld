@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                java -jar /Users/chidanandapati/.m2/repository/com/example/helloworld/0.0.1-SNAPSHOT/helloworld-0.0.1-SNAPSHOT.jar &
+                BUILD_ID=dontKillMe BUILD_ID=dontKillMe nohup bash /tmp/spring_boot.sh &
                 '''
             }
         }
