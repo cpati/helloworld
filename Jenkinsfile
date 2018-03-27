@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                BUILD_ID=dontKillMe /tmp/spring_boot.sh
+                JENKINS_NODE_COOKIE=dontKillMe /tmp/spring_boot.sh
                 '''
             }
         }
