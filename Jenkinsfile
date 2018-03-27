@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                mvn spring-boot:run &
+                java -jar /Users/chidanandapati/.m2/repository/com/example/helloworld/0.0.1-SNAPSHOT/helloworld-0.0.1-SNAPSHOT.jar &
                 '''
             }
         }
