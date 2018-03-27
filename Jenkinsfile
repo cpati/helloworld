@@ -20,6 +20,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
+                running_process=`ps -ef|grep helloworld|grep -v grep|awk \'{print $2}\'`;
+                if [ -n "$running_process" ]
+				then
+				  kill $running_process;
+				fi  
                 JENKINS_NODE_COOKIE=dontKillMe /tmp/spring_boot.sh
                 '''
             }
