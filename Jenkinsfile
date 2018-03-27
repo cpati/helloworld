@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                BUILD_ID=dontKillMe BUILD_ID=dontKillMe nohup bash /tmp/spring_boot.sh &
+                BUILD_ID=dontKillMe nohup bash /tmp/spring_boot.sh &
                 '''
             }
         }
